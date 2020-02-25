@@ -46,11 +46,26 @@ function renderPatty() {
 }
 
 function renderCheese() {
+
   //Trial 1 - Change the visibility of cheese based on state by manipulating the DOM
+  let $cheese = document.querySelector("#cheese");
+  //you can also use getElementById
+  if (state.Cheese) {
+    $cheese.style.display = "inherit";
+  } else {
+    $cheese.style.display = "none";
+  }
 }
 
 function renderTomatoes() {
   //Trial 1 - Change the visibility of Tomatoes based on state by manipulating the DOM
+  let $tomato = document.querySelector("#tomato");
+  //you can also use getElementById
+  if (state.Tomatoes) {
+    $tomato.style.display = "inherit";
+  } else {
+    $tomato.style.display = "none";
+  }
 }
 
 function renderOnions() {
@@ -67,11 +82,18 @@ document.querySelector(".btn-patty").onclick = function () {
 };
 
 // Trial 2 - Setup event listener for the cheese button
+document.querySelector(".btn-cheese").onclick = function () {
+  state.Cheese = !state.Cheese;
+  renderAll();
+};
 
 
 // Trial 2 - Setup event listener for the tomatoes button
 
-
+document.querySelector(".btn-tomatoes").onclick = function () {
+  state.Tomatoes = !state.Tomatoes;
+  renderAll();
+};
 // Trial 2 - Setup event listener for the onion button
 
 
